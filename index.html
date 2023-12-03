@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <title>TailwindCssRecipes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body id="bodyWidth" class=" flex justify-center items-center  bg-gradient-to-br bg-cover bg-no-repeat  from-blue-500 to-green-400">
+    
+        <div id="addRecipes_part" class=" px-[20px] py-[30px] bg-white rounded-[10px] w-[1000px] h-[500px]">
+            <i id="exit" class="fa-solid fa-x text-lg text-gray-500 flex justify-end mb-1"></i>
+            <div class="flex justify-center items-center gap-16">
+            <div>
+                <h2 class="text-2xl font-medium text-gray-500 mb-6">RECIPE DATA</h2>
+                <div class="">
+                    <div class="flex gap-16 mb-6">
+                        <p class="text-gray-500 text-xl">Title</p>
+                        <input id="enter" class="placeholder:text-[#000] font-normal outline-none" type="text" placeholder="TEST12312">
+                    </div>
+                    <div class="flex gap-16 mb-6">
+                        <p  class="text-gray-500 text-xl">URL</p>
+                        <input id="enter" class="placeholder:text-[#000] font-normal outline-none" type="text" placeholder="TEST12312">
+                    </div>
+                    <div class="flex gap-16 mb-6">
+                        <p  class="text-gray-500 text-xl">Image URL</p>
+                        <input id="enter" class="placeholder:text-[#000] font-normal outline-none" type="text" placeholder="TEST12312">
+                    </div>
+                    <div class="flex gap-16 mb-6">
+                        <p  class="text-gray-500 text-xl">Publisher</p>
+                        <input id="enter" class="placeholder:text-[#000] font-normal outline-none" type="text" placeholder="TEST12312">
+                    </div>
+                    <div class="flex gap-16 mb-6">
+                        <p  class="text-gray-500 text-xl">Prem time</p>
+                        <input id="enter" class="placeholder:text-[#000] font-normal outline-none" type="text" placeholder="23">
+                    </div>
+                    <div class="flex gap-16 mb-6">
+                        <p  class="text-gray-500 text-xl">Servings</p>
+                        <input id="enter" class="placeholder:text-[#000] font-normal outline-none" type="text" placeholder="23">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-2xl font-medium text-gray-500 mb-6">INGREDIENTS</h2>
+                <div class="">
+                    <div class="flex gap-16 mb-6">
+                        <p  class="text-gray-500 text-xl">ingredient 1</p>
+                        <input id="enter" class="placeholder:text-[#000] font-normal outline-none"  type="text" placeholder="TEST12312">
+                    </div>
+                    <div class="flex gap-16 mb-6">
+                        <p  class="text-gray-500 text-xl">ingredient 2</p>
+                        <input id="enter" class="placeholder:text-[#000] font-normal outline-none" type="text" placeholder="TEST12312">
+                    </div>
+                    <div class="flex gap-16 mb-6">
+                        <p  class="text-gray-500 text-xl">ingredient 3</p>
+                        <input id="enter" class="placeholder:text-[#000] font-normal outline-none" type="text" placeholder="TEST12312">
+                    </div>
+                    <div class="flex gap-16 mb-6">
+                        <p  class="text-gray-500 text-xl">ingredient 4</p>
+                        <input id="enter" class="placeholder:text-[#000] font-normal outline-none" type="text" placeholder="TEST12312">
+                    </div>
+                    <div class="flex gap-16 mb-6">
+                        <p class="text-gray-500 text-xl">ingredient 5</p>
+                        <input id="enter" class="placeholder:text-[#000] font-normal outline-none" type="text" placeholder="TEST12312">
+                    </div>
+                    <div class="flex gap-16 mb-6">
+                        <p class="text-gray-500 text-xl">ingredient 6</p>
+                        <input id="enter" class="placeholder:text-[#000] font-normal outline-none" type="text" placeholder="TEST12312">
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="cursor-pointer py-3 px-7 w-[150px] mt-5 ml-[400px] flex gap-3 text-white justify-center transition ease-in-out delay-75 items-center bg-gradient-to-br from-blue-500 to-[#9df451] rounded-full ">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                <p>UPLOAD</p>
+            </div>
+         </div>
+
+    <div id="mainPart"  class=" m-10 max-w-[1200px]">
+    <div id="None" class="bg-orange-50 w-full  rounded-md " >
+        <header>
+        <div class="flex justify-between ">
+            <div class="flex gap-28 py-7">
+            <div class="w-[140px] ml-8 flex items-center justify-center">
+                <img class="cursor-pointer" src="./image/logo.726d37a8.png" alt="">
+            </div>
+            <div id="search" class="w-[120%] cursor-pointer flex gap-4 bg-white pl-5 rounded-full hover:-translate-y-0.5">
+                <input
+                id="enter_foodName"
+                 class="bg-white w-[100%] py-1 placeholder:text-orange-200  placeholder:text-[18px] pr-5 border-0 outline-none cursor-pointer" type="text" placeholder="search over 1,000,000 recipes...">
+
+                 <div onclick="getData()" id="searchBtn" class="transition ease-in-out delay-75 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ... flex items-center justify-end gap-4 hover:ease-in  text-white px-10 bg-gradient-to-br from-blue-500 to-[#9df451] rounded-full">
+                    <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    <h3 class="text-sm font-medium">SEARCH</h3>
+                </div>
+            </div>
+        </div>
+            <div class="flex items-center">
+                <div id="addRecipes" class="flex gap-2.5 items-center cursor-pointer hover:bg-gray-100 px-8 py-10 ">
+                    <i class="fa-regular fa-pen-to-square text-blue-500 text-2xl"></i>
+                    <h3 class="text-sm font-medium text-gray-600">ADD RECIPE</h3>
+                </div>
+                <div id="bg-color" class="flex gap-2.5 items-center cursor-pointer hover:bg-gray-100 px-8 py-10">
+                    <i class="fa-regular fa-bookmark text-blue-500 text-2xl"></i>
+                    <h3 class="text-sm font-medium text-gray-600 ">BOOKMARKS</h3>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="">
+        <div class="flex ">
+            <div
+            id="meals"
+            class=" bg-white  w-1/3 pt-8 rounded-b-[10px]">
+
+               <div id="gif" class="cursor-not-allowed w-[150px] h-[150px] rounded-full  bg-[url('./image/burger.gif')] bg-center bg-cover"></div>
+            </div>
+            <div class="right_part w-2/3">
+                <div id="selected" class="pb-[5px]">
+                    
+                    <div id="defaultImg" class="image_right_part  bg-cover bg-center w-full h-[320px] bg-[url('./image/defaultImg.jpg')] "></div>
+                        <div id="gif_big" class="cursor-not-allowed w-[100%] h-[320px]   bg-[url('./image/burger.gif')] bg-center bg-cover"></div>
+                        <div class="bg-gradient-to-br -skew-x-6  from-blue-600  to-red-400 px-5 py-3 flex justify-center w-96 translate-x-56 -translate-y-12 -rotate-6">
+                            <p class="text-4xl text-white font-bold ">CHICKEN BIRYANI</p>
+                        </div>
+                   
+                </div>
+
+                <div class="flex justify-around items-center mt-8 mb-10 ">
+                    <div class="flex gap-16">
+                        <div class="flex gap-3 items-center">
+                            <i class="fa-regular fa-clock text-2xl text-blue-500"></i>
+                            <p id="clock" class="text-lg font-normal"> MINUTES</p>
+                        </div>
+<!-- <span id="peopleOfNumber" class="mr-1 text-gray-700 font-medium text-lg"></span> -->
+                        <div class="flex gap-3 items-center ">
+                            <i class="fa-solid fa-user-group text-2xl text-blue-500"></i>
+                            <p id="servings" class="text-lg font-normal">SERVINGS</p>
+                            <div class="icons ml-2 flex gap-2">
+                                <i id="plus" class="cursor-pointer fa-solid fa-circle-plus text-2xl text-blue-500 hover:text-orange-300 hover:-translate-y-1"></i>
+                                <i id="minus" class="cursor-pointer fa-solid fa-circle-minus text-2xl text-blue-500 hover:text-orange-300 hover:-translate-y-1"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-5 justify-center items-center">
+                        <div class=" flex items-center justify-center bg-gray-200 w-10 h-10 px-3 py-1 rounded-full">
+                        <i class="fa-regular fa-user text-blue-600 "></i>
+                       </div>
+
+                        <div id="bookmarks" class="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ... cursor-pointer bg-gradient-to-br from-blue-600  to-green-400 px-5 py-3 rounded-full">
+                            <i id="bookmark_1" class="fa-regular fa-bookmark  text-white text-2xl"></i> 
+                            <i id="bookmark_2" class="fa-solid fa-bookmark text-white text-2xl hidden"></i>
+                        </div>
+                    </div>
+                </div>
+                    
+                    <div class=" bg-neutral-100 pt-14 pb-10">
+                        <h3 class="text-blue-500 text-2xl flex justify-center mb-10">RECIPE INGREDIENTS</h3>
+                        <div id="vegetables" class="flex gap-[3px] flex-wrap items-center">
+                        </div>
+                    </div>
+
+                        <div class="w-[750px] flex justify-center flex-col pt-10 pb-12">
+                        <h3 class="text-2xl text-blue-500 text-center mb-7 ">HOW TO COOK IT</h3>
+                        <p class="text-gray-600 w-[540px] text-center ml-24">This recipe was carefully designed and tested by <span id="publisher" class="text-lg text-gray-600 font-medium">BBC Good Food.</span> Please check out directions at their website.</p>
+                        
+                        <div class="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ... cursor-pointer flex items-center justify-center gap-4 text-white ml-[290px] py-3 px-6 rounded-full bg-gradient-to-br from-blue-600  to-[#9df451] w-44 mt-16">
+                            <a class="text-base" href="">
+                                DIRECTIONS
+                            </a>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                        <div class="icons flex items-center justify-end pr-8 mt-20 gap-5 text-[24px] text-blue-500">
+                            <a target="_blank" href="https://t.me/Baxmalim0_2_0_9_2002"><i class=" icon fa-brands fa-telegram hover:text-orange-300 hover:-translate-y-1"></i></a>
+                            <a target="_blank" href="https://www.linkedin.com/in/ziynat-imomqulova-a4244729b/"><i class="icon fa-brands fa-linkedin hover:text-orange-300 hover:-translate-y-1"></i></a>
+                            <a target="_blank" href="https://github.com/Ziynat02"><i class="icon fa-brands fa-github hover:text-orange-300 hover:-translate-y-1"></i></a>
+                            <a target="_blank" href="https://portfolio1-two-psi.vercel.app/"><i class="icon fa-solid fa-user hover:text-orange-300 hover:-translate-y-1"></i></a>
+                        </div>
+                    </div> 
+                    
+
+              
+                     </div>
+        </div>
+    </main>
+    </div>
+    </div>
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
