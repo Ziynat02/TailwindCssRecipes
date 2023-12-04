@@ -8,9 +8,9 @@
     <title>TailwindCssRecipes</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body id="bodyWidth" class=" flex justify-center items-center  bg-gradient-to-br bg-cover bg-no-repeat  from-blue-500 to-green-400">
+<body id="bodyWidth" class="relative flex justify-center  bg-gradient-to-br bg-cover bg-no-repeat  from-blue-500 to-green-400">
     
-        <div id="addRecipes_part" class=" px-[20px] py-[30px] bg-white rounded-[10px] w-[1000px] h-[500px]">
+        <div id="addRecipes_part" class=" mt-16 absolute px-[20px] py-[30px] bg-white rounded-[10px] w-[1000px] h-[520px]">
             <i id="exit" class="fa-solid fa-x text-lg text-gray-500 flex justify-end mb-1"></i>
             <div class="flex justify-center items-center gap-16">
             <div>
@@ -18,27 +18,27 @@
                 <div class="">
                     <div class="flex gap-16 mb-6">
                         <p class="text-gray-500 text-xl">Title</p>
-                        <input id="enter" class="placeholder:text-[#000] font-normal outline-none" type="text" placeholder="TEST12312">
+                        <input id="enter titleInput" class="placeholder:text-[#000] font-normal outline-none" type="text" placeholder="TEST12312">
                     </div>
                     <div class="flex gap-16 mb-6">
                         <p  class="text-gray-500 text-xl">URL</p>
-                        <input id="enter" class="placeholder:text-[#000] font-normal outline-none" type="text" placeholder="TEST12312">
+                        <input id="enter " class="placeholder:text-[#000] font-normal outline-none" type="text" placeholder="TEST12312">
                     </div>
                     <div class="flex gap-16 mb-6">
                         <p  class="text-gray-500 text-xl">Image URL</p>
-                        <input id="enter" class="placeholder:text-[#000] font-normal outline-none" type="text" placeholder="TEST12312">
+                        <input id="enter imageUrlInput" class="placeholder:text-[#000] font-normal outline-none" type="text" placeholder="TEST12312">
                     </div>
                     <div class="flex gap-16 mb-6">
                         <p  class="text-gray-500 text-xl">Publisher</p>
-                        <input id="enter" class="placeholder:text-[#000] font-normal outline-none" type="text" placeholder="TEST12312">
+                        <input id="enter publisherInput" class="placeholder:text-[#000] font-normal outline-none" type="text" placeholder="TEST12312">
                     </div>
                     <div class="flex gap-16 mb-6">
                         <p  class="text-gray-500 text-xl">Prem time</p>
-                        <input id="enter" class="placeholder:text-[#000] font-normal outline-none" type="text" placeholder="23">
+                        <input id="enter primeTimeInput " class="placeholder:text-[#000] font-normal outline-none" type="text" placeholder="23">
                     </div>
                     <div class="flex gap-16 mb-6">
                         <p  class="text-gray-500 text-xl">Servings</p>
-                        <input id="enter" class="placeholder:text-[#000] font-normal outline-none" type="text" placeholder="23">
+                        <input id="enter servingsInput" class="placeholder:text-[#000] font-normal outline-none" type="text" placeholder="23">
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@
                 </div>
             </div>
         </div>
-            <div class="cursor-pointer py-3 px-7 w-[150px] mt-5 ml-[400px] flex gap-3 text-white justify-center transition ease-in-out delay-75 items-center bg-gradient-to-br from-blue-500 to-[#9df451] rounded-full ">
+            <div id="upload" class="cursor-pointer py-3 px-7 w-[150px] mt-5 ml-[400px] flex gap-3 text-white justify-center transition ease-in-out delay-75 items-center bg-gradient-to-br from-blue-500 to-[#9df451] rounded-full ">
                 <i class="fa-solid fa-cloud-arrow-up"></i>
                 <p>UPLOAD</p>
             </div>
@@ -124,7 +124,7 @@
                     
                     <div id="defaultImg" class="image_right_part  bg-cover bg-center w-full h-[320px] bg-[url('./image/defaultImg.jpg')] "></div>
                         <div id="gif_big" class="cursor-not-allowed w-[100%] h-[320px]   bg-[url('./image/burger.gif')] bg-center bg-cover"></div>
-                        <div class="bg-gradient-to-br -skew-x-6  from-blue-600  to-red-400 px-5 py-3 flex justify-center w-96 translate-x-56 -translate-y-12 -rotate-6">
+                        <div class="z-[-10] bg-gradient-to-br -skew-x-6  from-blue-600  to-red-400 px-5 py-3 flex justify-center w-96 translate-x-56 -translate-y-12 -rotate-6">
                             <p class="text-4xl text-white font-bold ">CHICKEN BIRYANI</p>
                         </div>
                    

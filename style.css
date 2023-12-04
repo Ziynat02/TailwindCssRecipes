@@ -7,9 +7,6 @@
   display: block;
 } */
 #addRecipes_part{
-  display: block;
-}
-#mainPart{
   display: none;
 }
 #meals {

@@ -18,17 +18,51 @@ let exit = document.getElementById("exit");
 let addRecipes_part = document.getElementById("addRecipes_part");
 let addRecipes = document.getElementById("addRecipes");
 let mainPart = document.getElementById("mainPart");
-// let bodyWidth = document.getElementById("bodyWidth");
+//////////////////////////////////////////////////
+let titleInput = document.getElementById("titleInput");
+let imageUrlInput = document.getElementById("imageUrlInput");
+let publisherInput = document.getElementById("publisherInput");
+let primerTimeInput = document.getElementById("primerTimeInput");
+let servingsInput = document.getElementById("servingsInput");
+let upload = document.getElementById("upload");
 
 ///////////////////////////////////////////////////////////////
 addRecipes.addEventListener("click",()=>{
   addRecipes_part.style.display = "block";
-  mainPart.style.display = "none";
-  // bodyWidth.style.height = "1000px";
+  mainPart.style.display = "block";
+  // mainPart.style.filter = "blur(3px)";
+  meals.innerHTML = `
+  <div class=" menu flex gap-7 justify-centr items-center  hover:bg-orange-50 hover:-translate-y-2 focus:bg-orange-200 pl-7 p-7 recipes_list ">
+  <div class="cursor-pointer  image object-fit w-[60px] h-[60px] rounded-full bg-cover bg-center  bg-[url('${
+    image_url.value
+  }')]" id='tooltip'>
+  <span class='tooltiptext'>${titleInput.value}</span>
+  </div>
+  <div class="text_part ">
+  <h4 class="text-blue-500 text-base">${
+    titleInput.value.substring(0, 25) + "..."
+  }</h4>
+  <p class="text-gray-600 text-sm mt-1">${publisherInput.value}</p>
+  </div>
+  </div>
+  `
+  clock.innerHTML = `<span  class="mr-1 text-gray-700 font-medium text-lg">${primerTimeInput.value}</span>MINUTES`;
+
+  servings.innerHTML = `<span  class="mr-1 text-gray-700 font-medium text-lg">${servingsInput.value}</span>SERVINGS`;
+
+  
+});
+upload.addEventListener("click",()=>{
+  servingsInput.value="";
+  primerTimeInput.value="";
+  titleInput.value="";
+  publisherInput.value="";
+  imageUrlInput.value="";
 });
 exit.addEventListener("click",()=>{
   addRecipes_part.style.display = "none";
   mainPart.style.display = "block";
+  // mainPart.style.filter = "blur(0px)";
 });
 
 const API_KEY = `01341e80-b80c-416d-b373-248f345f3291`;
