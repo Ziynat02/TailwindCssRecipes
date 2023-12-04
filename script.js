@@ -27,42 +27,43 @@ let servingsInput = document.getElementById("servingsInput");
 let upload = document.getElementById("upload");
 
 ///////////////////////////////////////////////////////////////
-addRecipes.addEventListener("click",()=>{
+addRecipes.addEventListener("click", () => {
   addRecipes_part.style.display = "block";
-  mainPart.style.display = "block";
-  // mainPart.style.filter = "blur(3px)";
-  meals.innerHTML = `
-  <div class=" menu flex gap-7 justify-centr items-center  hover:bg-orange-50 hover:-translate-y-2 focus:bg-orange-200 pl-7 p-7 recipes_list ">
-  <div class="cursor-pointer  image object-fit w-[60px] h-[60px] rounded-full bg-cover bg-center  bg-[url('${
-    image_url.value
-  }')]" id='tooltip'>
-  <span class='tooltiptext'>${titleInput.value}</span>
-  </div>
-  <div class="text_part ">
-  <h4 class="text-blue-500 text-base">${
-    titleInput.value.substring(0, 25) + "..."
-  }</h4>
-  <p class="text-gray-600 text-sm mt-1">${publisherInput.value}</p>
-  </div>
-  </div>
-  `
-  clock.innerHTML = `<span  class="mr-1 text-gray-700 font-medium text-lg">${primerTimeInput.value}</span>MINUTES`;
+  addRecipes_part.style.zIndex = "1";
+  mainPart.style.filter = "blur(3px)";
+  // meals.innerHTML = `
+  // <div class=" menu flex gap-7 justify-centr items-center  hover:bg-orange-50 hover:-translate-y-2 focus:bg-orange-200 pl-7 p-7 recipes_list ">
+  // <div class="cursor-pointer  image object-fit w-[60px] h-[60px] rounded-full bg-cover bg-center  bg-[url('${
+  //   image_url.value
+  // }')]" id='tooltip'>
+  // <span class='tooltiptext'>${titleInput.value}</span>
+  // </div>
+  // <div class="text_part ">
+  // <h4 class="text-blue-500 text-base">${
+  //   titleInput.value.substring(0, 25) + "..."
+  // }</h4>
+  // <p class="text-gray-600 text-sm mt-1">${publisherInput.value}</p>
+  // </div>
+  // </div>
+  // `
+  // clock.innerHTML = `<span  class="mr-1 text-gray-700 font-medium text-lg">${primerTimeInput.value}</span>MINUTES`;
 
-  servings.innerHTML = `<span  class="mr-1 text-gray-700 font-medium text-lg">${servingsInput.value}</span>SERVINGS`;
-
-  
+  // servings.innerHTML = `<span  class="mr-1 text-gray-700 font-medium text-lg">${servingsInput.value}</span>SERVINGS`;
 });
-upload.addEventListener("click",()=>{
-  servingsInput.value="";
-  primerTimeInput.value="";
-  titleInput.value="";
-  publisherInput.value="";
-  imageUrlInput.value="";
+upload.addEventListener("click", () => {
+  servingsInput.value = "";
+  primerTimeInput.value = "";
+  titleInput.value = "";
+  publisherInput.value = "";
+  imageUrlInput.value = "";
 });
-exit.addEventListener("click",()=>{
+addRecipes_part.addEventListener("click", () => {
   addRecipes_part.style.display = "none";
-  mainPart.style.display = "block";
-  // mainPart.style.filter = "blur(0px)";
+  mainPart.style.filter = "none";
+});
+exit.addEventListener("click", () => {
+  addRecipes_part.style.display = "none";
+  mainPart.style.filter = "none";
 });
 
 const API_KEY = `01341e80-b80c-416d-b373-248f345f3291`;
@@ -76,7 +77,7 @@ function getData() {
       showUi(res);
       addDel(res.data);
     });
-    defaultImg.style.display = "none";
+  defaultImg.style.display = "none";
   enter_foodName.value = "";
   gif.style.display = "block";
   gif_big.style.display = "block";
@@ -111,14 +112,13 @@ function showUi(data) {
   }
 }
 
-
 let count = 0;
 plus.addEventListener("click", () => {
-  peopleOfNumber.innerHTML = `${(count = count + 1)}`;
+  peopleOfNumber.innerHTML = `${++count}`;
 });
 minus.addEventListener("click", () => {
   if (count > 1) {
-    peopleOfNumber.innerHTML = `${(count = count - 1)}`;
+    peopleOfNumber.innerHTML = `${--count}`;
   } else {
     peopleOfNumber.innerHTML = 1;
   }
@@ -148,15 +148,14 @@ function addDel(data) {
   const addDel = `https://forkify-api.herokuapp.com/api/v2/recipes/${data}?key=${API_KEY}`;
   fetch(addDel)
     .then((res_2) => res_2.json())
-    .then((res_2) => { 
-      console.log(res_2.data.recipe);         
-    if (res_2 === true) {
+    .then((res_2) => {
+      console.log(res_2.data.recipe);
+      if (res_2 === true) {
         gif_big.style.display = "none";
-      
-      }else{
-          gif_big.style.display = "block";
-        }            
-        selected.innerHTML = `
+      } else {
+        gif_big.style.display = "block";
+      }
+      selected.innerHTML = `
     <div class=" image_right_part bg-cover bg-center w-full h-72  ">
       <div class="image_right_part  bg-cover bg-center w-full h-[320px] bg-[url('${res_2.data.recipe.image_url}')] "></div>
       <div class="bg-gradient-to-br -skew-x-6  from-blue-600  to-red-400 px-5 py-3 flex justify-center w-96 translate-x-64 -translate-y-12 -rotate-6">
@@ -166,22 +165,20 @@ function addDel(data) {
       </div>
       `;
 
-    clock.innerHTML = `<span  class="mr-1 text-gray-700 font-medium text-lg">${res_2.data.recipe.cooking_time}</span>MINUTES`;
+      clock.innerHTML = `<span  class="mr-1 text-gray-700 font-medium text-lg">${res_2.data.recipe.cooking_time}</span>MINUTES`;
 
-    servings.innerHTML = `<span  class="mr-1 text-gray-700 font-medium text-lg">${res_2.data.recipe.servings}</span>SERVINGS`;
-// //////////////////////////////////////////////////
-vegetables.innerHTML="";
-        for (let i = 0; i < res_2.data.recipe.ingredients.length; i++) {
-         vegetables.innerHTML += `
+      servings.innerHTML = `<span  class="mr-1 text-gray-700 font-medium text-lg">${res_2.data.recipe.servings}</span>SERVINGS`;
+      // //////////////////////////////////////////////////
+      vegetables.innerHTML = "";
+      for (let i = 0; i < res_2.data.recipe.ingredients.length; i++) {
+        vegetables.innerHTML += `
          <div class="flex items-center gap-2  mb-3 ml-[100px] w-[250px]">
          <i class="fa-solid fa-check text-blue-500 text-xl"></i>
-         <p class="text-gray-600"><span>${res_2.data.recipe.ingredients[i].quantity}</span><span>${res_2.data.recipe.ingredients[i].unit}</span>${res_2.data.recipe.ingredients[i].description}</p>
+         <p class="text-gray-600"><span class="mr-[3px]">${res_2.data.recipe.ingredients[i].quantity}</span><span class="ml-[2px]">${res_2.data.recipe.ingredients[i].unit}</span>${res_2.data.recipe.ingredients[i].description}</p>
         </div>
-         `
-          
-        }
-        //////////////////////////////////////////////////////////
-        publisher.innerHTML = `${res_2.data.recipe.publisher}`;
-
-  });
+         `;
+      }
+      //////////////////////////////////////////////////////////
+      publisher.innerHTML = `${res_2.data.recipe.publisher}`;
+    });
 }
